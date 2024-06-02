@@ -23,7 +23,7 @@ export const register = (name, email, password) => {
 
 export const login = (email, password) => {
     return (dispatch) => {
-      if (email === 'leo_r1089@hotmail.com' && password === '123456') {
+      if (email === 'admin@hotmail.com' && password === '123456') {
         dispatch({ type: 'LOGIN_SUCCESS' });
       } else {
         dispatch({ type: 'LOGIN_FAILURE' });

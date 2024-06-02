@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import icon from './assets/icon.png';
+import icon from './assets/img/icon.png';
 import './styles.css'
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';

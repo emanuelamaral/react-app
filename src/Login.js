@@ -1,6 +1,6 @@
 // src/Login.js
 import { useState } from 'react';
-import icon from './assets/icon.png';
+import icon from './assets/img/icon.png';
 import './styles.css';
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
@@ -31,7 +31,7 @@ function Login() {
     };
   
     if (isAuthenticated) {
-      nav('/home');
+      nav('/admin/dashboard');
     }
   
     return (
