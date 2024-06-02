@@ -1,44 +1,108 @@
 import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-// react plugin used to create charts
 import { Line, Bar } from "react-chartjs-2";
-
-// reactstrap components
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend } from "chart.js";
 import {
-  Button,
-  ButtonGroup,
   Card,
   CardHeader,
   CardBody,
   CardTitle,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  Label,
-  FormGroup,
-  Input,
-  Table,
   Row,
   Col,
-  UncontrolledTooltip,
 } from "reactstrap";
 
-// core components
-import {
-  chartExample1,
-  chartExample2,
-  chartExample3,
-  chartExample4,
-} from "../variables/charts.js";
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
 
-function Dashboard(props) {
-  const [bigChartData, setbigChartData] = React.useState("data1");
-  const setBgChartData = (name) => {
-    setbigChartData(name);
-  };
+const data = {
+  labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho"],
+  datasets: [
+    {
+      label: "Medições de Dispositivos",
+      data: [65, 59, 80, 81, 56, 55, 40],
+      fill: false,
+      backgroundColor: "rgba(75,192,192,0.4)",
+      borderColor: "rgba(75,192,192,1)",
+    },
+  ],
+};
 
+const options = {
+  responsive: true,
+  maintainAspectRatio: false,
+  scales: {
+    x: {
+      display: true,
+      title: {
+        display: true,
+        text: 'Meses'
+      }
+    },
+    y: {
+      display: true,
+      title: {
+        display: true,
+        text: 'Medições'
+      }
+    }
+  }
+};
+
+const chartExample2 = {
+  data: {
+    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho"],
+    datasets: [
+      {
+        label: "Dataset 2",
+        data: [20, 45, 28, 80, 99, 43, 56],
+        fill: false,
+        backgroundColor: "rgba(153,102,255,0.6)",
+        borderColor: "rgba(153,102,255,1)",
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+  }
+};
+
+const chartExample3 = {
+  data: {
+    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho"],
+    datasets: [
+      {
+        label: "Dispositivos",
+        data: [65, 59, 80, 81, 56, 55, 40],
+        backgroundColor: "rgba(255,99,132,0.6)",
+        borderColor: "rgba(255,99,132,1)",
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+  }
+};
+
+const chartExample4 = {
+  data: {
+    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho"],
+    datasets: [
+      {
+        label: "Usuários",
+        data: [10, 25, 19, 12, 37, 29, 40],
+        fill: false,
+        backgroundColor: "rgba(54,162,235,0.6)",
+        borderColor: "rgba(54,162,235,1)",
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+  }
+};
+
+function Dashboard() {
   return (
     <>
       <div className="content">
@@ -48,83 +112,51 @@ function Dashboard(props) {
               <CardHeader>
                 <Row>
                   <Col className="text-left" sm="6">
-                    <h5 className="card-category">Total Shipments</h5>
-                    <CardTitle tag="h2">Performance</CardTitle>
+                    <h5 className="card-category">Dispositivos</h5>
+                    <CardTitle tag="h2">Medições</CardTitle>
                   </Col>
                 </Row>
               </CardHeader>
               <CardBody>
-                {/* <div className="chart-area">
-                  <Line
-                    data={(canvas) => chartExample1[bigChartData](canvas)}
-                    options={chartExample1.options}
-                  />
-                </div> */}
+                <div className="chart-area">
+                  <Line data={data} options={options} />
+                </div>
               </CardBody>
             </Card>
           </Col>
         </Row>
         <Row>
-          <Col lg="4">
+          <Col lg="6">
             <Card className="card-chart">
               <CardHeader>
-                <h5 className="card-category">Total Shipments</h5>
+                <h5 className="card-category">Dispositivos</h5>
                 <CardTitle tag="h3">
-                  <i className="tim-icons icon-bell-55 text-info" /> 763,215
+                  <i className="tim-icons icon-delivery-fast text-primary" /> 250
                 </CardTitle>
               </CardHeader>
               <CardBody>
-                {/* <div className="chart-area">
-                  <Line
-                    data={(canvas) => chartExample2.data(canvas)}
-                    options={chartExample2.options}
-                  />
-                </div> */}
+                <div className="chart-area">
+                  <Bar data={chartExample3.data} options={chartExample3.options} />
+                </div>
               </CardBody>
             </Card>
           </Col>
-          <Col lg="4">
+          <Col lg="6">
             <Card className="card-chart">
               <CardHeader>
-                <h5 className="card-category">Daily Sales</h5>
+                <h5 className="card-category">Usuários cadastrados</h5>
                 <CardTitle tag="h3">
-                  <i className="tim-icons icon-delivery-fast text-primary" />{" "}
-                  3,500€
+                  <i className="tim-icons icon-send text-success" /> 40
                 </CardTitle>
               </CardHeader>
               <CardBody>
-                {/* <div className="chart-area">
-                  <Bar
-                    data={(canvas) => chartExample3.data(canvas)}
-                    options={chartExample3.options}
-                  />
-                </div> */}
-              </CardBody>
-            </Card>
-          </Col>
-          <Col lg="4">
-            <Card className="card-chart">
-              <CardHeader>
-                <h5 className="card-category">Completed Tasks</h5>
-                <CardTitle tag="h3">
-                  <i className="tim-icons icon-send text-success" /> 12,100K
-                </CardTitle>
-              </CardHeader>
-              <CardBody>
-                {/* <div className="chart-area">
-                  <Line
-                    data={(canvas) => chartExample4.data(canvas)}
-                    options={chartExample4.options}
-                  />
-                </div> */}
+                <div className="chart-area">
+                  <Line data={chartExample4.data} options={chartExample4.options} />
+                </div>
               </CardBody>
             </Card>
           </Col>
         </Row>
-        {/* <Row>
-          <Col lg="6" md="12">
-          </Col>
-        </Row> */}
       </div>
     </>
   );

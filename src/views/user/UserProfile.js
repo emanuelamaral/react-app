@@ -24,16 +24,16 @@ function UserProfile() {
           <Col md="8">
             <Card>
               <CardHeader>
-                <h5 className="title">Edit Profile</h5>
+                <h5 className="title">Editar Perfil</h5>
               </CardHeader>
               <CardBody>
                 <Form>
                   <Row>
                     <Col className="pr-md-1" md="5">
                       <FormGroup>
-                        <label>Company (disabled)</label>
+                        <label>Empresa (disabled)</label>
                         <Input
-                          defaultValue="Creative Code Inc."
+                          defaultValue="Universidade Tecnológica Federal do Paraná."
                           disabled
                           placeholder="Company"
                           type="text"
@@ -42,10 +42,10 @@ function UserProfile() {
                     </Col>
                     <Col className="px-md-1" md="3">
                       <FormGroup>
-                        <label>Username</label>
+                        <label>Nome de Usuário</label>
                         <Input
-                          defaultValue="michael23"
-                          placeholder="Username"
+                          defaultValue="teste123"
+                          placeholder="Nome de usuário"
                           type="text"
                         />
                       </FormGroup>
@@ -53,29 +53,29 @@ function UserProfile() {
                     <Col className="pl-md-1" md="4">
                       <FormGroup>
                         <label htmlFor="exampleInputEmail1">
-                          Email address
+                          Endereço de E-mail
                         </label>
-                        <Input placeholder="mike@email.com" type="email" />
+                        <Input placeholder="teste@email.com" type="email" />
                       </FormGroup>
                     </Col>
                   </Row>
                   <Row>
                     <Col className="pr-md-1" md="6">
                       <FormGroup>
-                        <label>First Name</label>
+                        <label>Primeiro Nome</label>
                         <Input
-                          defaultValue="Mike"
-                          placeholder="Company"
+                          defaultValue="Teste"
+                          placeholder="Primeiro nome"
                           type="text"
                         />
                       </FormGroup>
                     </Col>
                     <Col className="pl-md-1" md="6">
                       <FormGroup>
-                        <label>Last Name</label>
+                        <label>Sobrenome</label>
                         <Input
-                          defaultValue="Andrew"
-                          placeholder="Last Name"
+                          defaultValue="Teste"
+                          placeholder="Sobrenome"
                           type="text"
                         />
                       </FormGroup>
@@ -84,10 +84,9 @@ function UserProfile() {
                   <Row>
                     <Col md="12">
                       <FormGroup>
-                        <label>Address</label>
+                        <label>Endereço</label>
                         <Input
-                          defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                          placeholder="Home Address"
+                          placeholder="Endereço pessoal"
                           type="text"
                         />
                       </FormGroup>
@@ -96,43 +95,26 @@ function UserProfile() {
                   <Row>
                     <Col className="pr-md-1" md="4">
                       <FormGroup>
-                        <label>City</label>
+                        <label>Cidade</label>
                         <Input
-                          defaultValue="Mike"
-                          placeholder="City"
+                          placeholder="Cidade"
                           type="text"
                         />
                       </FormGroup>
                     </Col>
                     <Col className="px-md-1" md="4">
                       <FormGroup>
-                        <label>Country</label>
+                        <label>Estado</label>
                         <Input
-                          defaultValue="Andrew"
-                          placeholder="Country"
+                          placeholder="Estado"
                           type="text"
                         />
                       </FormGroup>
                     </Col>
                     <Col className="pl-md-1" md="4">
                       <FormGroup>
-                        <label>Postal Code</label>
-                        <Input placeholder="ZIP Code" type="number" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col md="8">
-                      <FormGroup>
-                        <label>About Me</label>
-                        <Input
-                          cols="80"
-                          defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in
-                            that two seat Lambo."
-                          placeholder="Here can be your description"
-                          rows="4"
-                          type="textarea"
-                        />
+                        <label>CEP</label>
+                        <Input placeholder="CEP" type="number" />
                       </FormGroup>
                     </Col>
                   </Row>
@@ -158,16 +140,16 @@ function UserProfile() {
                     <img
                       alt="..."
                       className="avatar"
-                      src={require("../assets/img/emilyz.jpg")}
+                      src={require("../../assets/img/avataricon.png")}
                     />
-                    <h5 className="title">Mike Andrew</h5>
+                    <h5 className="title">Admin</h5>
                   </a>
                   <p className="description">Ceo/Co-Founder</p>
                 </div>
                 <div className="card-description">
-                  Do not be scared of the truth because we need to restart the
-                  human foundation in truth And I love you like Kanye loves
-                  Kanye I love Rick Owens’ bed design but the back is...
+                Olá! Eu sou o Administrador deste dashboard. Com anos de experiência em gestão de projetos e desenvolvimento de software, 
+                meu objetivo é garantir que todos os dados e funcionalidades do sistema estejam funcionando perfeitamente. 
+                Se precisar de ajuda, não hesite em entrar em contato!
                 </div>
               </CardBody>
               <CardFooter>

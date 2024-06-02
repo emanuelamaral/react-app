@@ -81,16 +81,11 @@ function Admin(props) {
   };
   return (
     <BackgroundColorContext.Consumer>
-      {({ color, changeColor }) => (
+      {({ color}) => (
         <React.Fragment>
           <div className="wrapper">
             <Sidebar
               routes={routes}
-              logo={{
-                outterLink: "https://www.creative-tim.com/",
-                text: "Creative Tim",
-                imgSrc: logo,
-              }}
               toggleSidebar={toggleSidebar}
             />
             <div className="main-panel" ref={mainPanelRef} data={color}>
@@ -106,10 +101,6 @@ function Admin(props) {
                   element={<Navigate to="/admin/dashboard" replace />}
                 />
               </Routes>
-              {
-                // we don't want the Footer to be rendered on map page
-                // location.pathname === "/admin/maps" ? null : <Footer fluid />
-              }
             </div>
           </div>
         </React.Fragment>

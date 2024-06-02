@@ -1,7 +1,7 @@
 import Dashboard from "./views/Dashboard.js";
 import Map from "./views/Map.js";
 // import Notifications from "./views/Notifications.js";
-import UserProfile from "./views/UserProfile.js";
+import UserProfile from "./views/user/UserProfile.js";
 import UserForm from "./views/user/UserForm.js";
 import UserList from "./views/user/UserList.js";
 
