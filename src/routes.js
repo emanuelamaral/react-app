@@ -3,7 +3,8 @@ import Map from "./views/Map.js";
 import UserProfile from "./views/user/UserProfile.js";
 import UserForm from "./views/user/UserForm.js";
 import UserList from "./views/user/UserList.js";
-import Gateways from "./views/gateway/Gateways.js";
+import GatewaysList from "./views/gateway/GatewaysList.js";
+import GatewayForm from "./views/gateway/GatewayForm.js";
 
 var routes = [
   {
@@ -44,8 +45,15 @@ var routes = [
   {
     path: "/gateways",
     name: "Lista de Gateways",
-    icon: "tim-icons icon-puzzle-10",
-    component: <Gateways />,
+    icon: "tim-icons icon-align-left-2",
+    component: <GatewaysList />,
+    layout: "/admin",
+  },
+  {
+    path: "/register-gateway",
+    name: "Cadastro de gateways",
+    icon: "tim-icons icon-puzzle-10 ",
+    component: <GatewayForm />,
     layout: "/admin",
   },
 ];
