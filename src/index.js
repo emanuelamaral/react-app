@@ -12,8 +12,8 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import ThemeContextWrapper from "./components/ThemeWrapper/ThemeWrapper";
 import BackgroundColorWrapper from "./components/BackgroundColorWrapper/BackgroundColorWrapper";
-import Login from "./Login.js";
-import Cadastro from "./Cadastro.js";
+import Login from "./views/Login.js";
+import Cadastro from "./views/Cadastro.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
