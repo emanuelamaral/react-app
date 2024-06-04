@@ -3,8 +3,8 @@ import Map from "./views/Map.js";
 import UserProfile from "./views/user/UserProfile.js";
 import UserForm from "./views/user/UserForm.js";
 import UserList from "./views/user/UserList.js";
-import DisposiForm from "./Dispositivos/DisposiForm.js";
-import DisposiList from "./Dispositivos/DispositivosList.js";
+import DisposiForm from "./views/Dispositivos/DisposiForm.js";
+import DisposiList from "./views/Dispositivos/DispositivosList.js";
 import GatewaysList from "./views/gateway/GatewaysList.js";
 import GatewayForm from "./views/gateway/GatewayForm.js";
 

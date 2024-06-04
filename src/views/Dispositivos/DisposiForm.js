@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useReducer, useState } from "react";
-import { IOT_API } from "../Const";
+import { IOT_API } from "../../Const.js";
 import { useNavigate } from "react-router-dom";
 
 import {
