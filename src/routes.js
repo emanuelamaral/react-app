@@ -4,6 +4,8 @@ import Map from "./views/Map.js";
 import UserProfile from "./views/user/UserProfile.js";
 import UserForm from "./views/user/UserForm.js";
 import UserList from "./views/user/UserList.js";
+import DisposiForm from "./Dispositivos/DisposiForm.js";
+import DisposiList from "./Dispositivos/DispositivosList.js";
 
 var routes = [
   {
@@ -47,6 +49,21 @@ var routes = [
     icon: "tim-icons icon-badge",
     component: <UserForm />,
     layout: "/admin"
+  },
+  {
+    path: "/dispositivos",
+    name: "Dispositivos",
+    icon: "tim-icons icon-laptop",
+    component: <DisposiList />,
+    layout: "/admin"
+  },
+  {
+    path: "/register-dispositivos",
+    name: "Cadastro de Dispositivos",
+    icon: "tim-icons icon-paper",
+    component: <DisposiForm />,
+    layout: "/admin"
   }
 ];
 export default routes;
+  
