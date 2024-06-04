@@ -60,7 +60,7 @@ var routes = [
   },
   {
     path: "/gateways",
-    name: "Lista de Gateways",
+    name: "Gateways",
     icon: "tim-icons icon-align-left-2",
     component: <GatewaysList />,
     layout: "/admin",

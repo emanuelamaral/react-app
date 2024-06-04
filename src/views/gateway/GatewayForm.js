@@ -88,7 +88,7 @@ function GatewayForm() {
                             <CardHeader>
                                 <Row>
                                     <Col className="text-left" sm="6">
-                                        <CardTitle tag="h2">Formulário de Cadastro</CardTitle>
+                                        <CardTitle tag="h2">Formulário de Cadastro de Gateway</CardTitle>
                                     </Col>
                                 </Row>
                                 <form>
