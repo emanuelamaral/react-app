@@ -110,7 +110,7 @@ function DispositivoForm() {
                                     <div className="mt-4">
                                         <button type="button" disabled={submitting} className="btn btn-success me-1" onClick={handleSave}>Salvar</
                                         button>
-                                        <button type="button" disabled={submitting} className="btn btn-light" onClick={() => nav('/user')}>Cancelar</button>
+                                        <button type="button" disabled={submitting} className="btn btn-light"  onClick={() => nav('/admin')}>Cancelar</button>
                                     </div>
                                 </form>
                             </CardHeader>
