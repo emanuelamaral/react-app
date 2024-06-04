@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { URL_API } from "../../Const";
-
+import {
+Card,
+CardHeader,
+CardTitle,
+} from "reactstrap";
 
 function Pagination({pages, changeActivePage, changePerPage, activePage}) {
     const itens = []; //Itens da paginação
@@ -74,6 +78,10 @@ function UserList() {
     return(
         <>
         <div className="content">
+        <Card>
+          <CardHeader>
+            <CardTitle tag="h4">Usuários Cadastrados</CardTitle>
+          </CardHeader>
             <table className="table table-dark table-striped">
                 <thead>
                     <tr>
@@ -106,6 +114,7 @@ function UserList() {
                 changeActivePage={handleChangeActivePage}
                 changePerPage={handleChangePerPage}
             />
+            </Card>
         </div>
         </>
     );

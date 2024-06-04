@@ -1,10 +1,10 @@
 // src/Login.js
 import { useState } from 'react';
-import icon from './assets/img/icon.png';
-import './styles.css';
+import icon from '../assets/img/icon.png';
+import '../styles.css';
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from './actions/authActions';
+import { login } from '../actions/authActions';
 
 function Login() {
     const [email, setEmail] = useState('');

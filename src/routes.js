@@ -1,11 +1,12 @@
 import Dashboard from "./views/Dashboard.js";
 import Map from "./views/Map.js";
-// import Notifications from "./views/Notifications.js";
 import UserProfile from "./views/user/UserProfile.js";
 import UserForm from "./views/user/UserForm.js";
 import UserList from "./views/user/UserList.js";
 import DisposiForm from "./Dispositivos/DisposiForm.js";
 import DisposiList from "./Dispositivos/DispositivosList.js";
+import GatewaysList from "./views/gateway/GatewaysList.js";
+import GatewayForm from "./views/gateway/GatewayForm.js";
 
 var routes = [
   {
@@ -20,13 +21,6 @@ var routes = [
   //   name: "Map",
   //   icon: "tim-icons icon-pin",
   //   component: <Map />,
-  //   layout: "/admin",
-  // },
-  // {
-  //   path: "/notifications",
-  //   name: "Notificações",
-  //   icon: "tim-icons icon-bell-55",
-  //   component: <Notifications />,
   //   layout: "/admin",
   // },
   {
@@ -63,7 +57,21 @@ var routes = [
     icon: "tim-icons icon-paper",
     component: <DisposiForm />,
     layout: "/admin"
-  }
+  },
+  {
+    path: "/gateways",
+    name: "Lista de Gateways",
+    icon: "tim-icons icon-align-left-2",
+    component: <GatewaysList />,
+    layout: "/admin",
+  },
+  {
+    path: "/register-gateway",
+    name: "Cadastro de gateways",
+    icon: "tim-icons icon-puzzle-10 ",
+    component: <GatewayForm />,
+    layout: "/admin",
+  },
 ];
 export default routes;
   
