@@ -13,10 +13,11 @@ import {
 } from "reactstrap";
 
 class HTMLForm {
-    constructor(nome = '', descricao = '', localizacao = '') {
+    constructor(nome = '', descricao = '', localizacao = '', endereco = '') {
         this.nome = nome;
         this.descricao = descricao;
         this.localizacao = localizacao;
+        this.endereco = endereco;
     }
 }
 
@@ -39,21 +40,25 @@ function DispositivoForm() {
     const [formData, setFormData] = useReducer(formReducer, new HTMLForm());
 
     function handleSave(event) {
+        const data = {
+            nome: formData.nome,
+            descricao: formData.descricao,
+            localizacao: formData.localizacao,
+            endereco: formData.endereco,
+          };
+          
+        console.log("FormData:", formData);
         setSubmitting(true);
 
-        axios.post(`${IOT_API}dispositivo`, formData, {
-            headers: {
-                "Content-type": "application/json",
-                // Adicione quaisquer cabeçalhos de autorização necessários
-            }
-        }).then(res => {
-            console.log("Sucesso: ", res);
-            alert("Dispositivo cadastrado com ID: " + res.data.id);
-            setFormData({ reset: true });
-        }).catch(err => {
-            console.error(err);
-            alert("Falha ao cadastrar dispositivo");
-        }).finally(() => setSubmitting(false));
+        axios.post(`${IOT_API}dispositivo`, data, { 
+            }).then(res => {
+                console.log("Sucesso: ", res);
+                alert("Dispositivo salvo com sucesso: " + res.data.id);
+                setFormData({reset: true});
+            }).catch(err => {
+                console.log(err);
+                alert("Falha ao salvar");
+            }).finally(() => setSubmitting(false));
     }
 
     function handleChange(event) {
@@ -94,6 +99,12 @@ function DispositivoForm() {
                                         <label className="form-label">Localização</label>
                                         <input type="text" name="localizacao" className="form-control"
                                             placeholder="Localização" value={formData.localizacao} onChange={handleChange} />
+                                    </fieldset>
+
+                                    <fieldset className="form-group" disabled={submitting}>
+                                        <label className="form-label">Endereço</label>
+                                        <input type="text" name="endereco" className="form-control"
+                                            placeholder="Endereço" value={formData.endereco} onChange={handleChange} />
                                     </fieldset>
 
                                     <div className="mt-4">
